@@ -1,73 +1,53 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-<title>red block</title>
-<link href="http://chlyang.github.io/haha/reset.css" rel="stylesheet" type="text/css" />
-<link href="http://chlyang.github.io/haha/global.css" rel="stylesheet" type="text/css" />
-<script src="http://greenzorro.github.io/colacdn/assets/js/jquery-latest.js"></script>
-<style>
-body {
-	padding: 10em;
-}
-div {
-	float: left;
-	width: 100px;
-	height: 100px;
-	margin: 1em;
-	border: 1px solid #dfdfdf;
-}
-span {
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: blue;
-}
-</style>
-</head>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Simple Icon Hover Effects with CSS Transitions and Animations</title>
+		<meta name="description" content="Simple Icon Hover Effects with CSS Transitions and Animations" />
+		<meta name="keywords" content="icons, hover, round, circular, transition, animation, css3" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<!-- Top Navigation -->
+		
+		
+			<section id="set-1">
+				<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
+					<a href="#set-1" class="hi-icon hi-icon-mobile"></a>
 
-<body>
+				</div>
+			
+			</section>
+	
+		</div><!-- /container -->
+		<script>
+			var hash = window.location.hash,
+				current = 0,
+				demos = Array.prototype.slice.call( document.querySelectorAll( '#codrops-demos > a' ) );
+			
+			if( hash === '' ) hash = '#set-1';
+			setDemo( demos[ parseInt( hash.match(/#set-(\d+)/)[1] ) - 1 ] );
 
-<div>
-	<span id="dragger" draggable="true"></span>
-</div>
-<div></div>
-<div></div>
+			demos.forEach( function( el, i ) {
+				el.addEventListener( 'click', function() { setDemo( this ); } );
+			} );
 
-<script>
-window.onload = function () {
-	var outer = document.getElementsByTagName('div');
-	var inner = document.getElementsByTagName('span');
-	var dragger = {};
-	for (var i = 0; i < outer.length; i++) {
-		outer[i].ondragover = function (e) {
-			e.preventDefault();
-		}
-		outer[i].ondrop = function (e) {
-			e.preventDefault();
-			// var data = e.dataTransfer.getData("text");
-			// console.log(data);
-			e.target.appendChild(dragger);
-		}
-	}
-	inner[0].ondragstart = function (e) {
-		dragger = e.target;
-		// e.dataTransfer.setData("text", e.target.id);
-	}
-}
-</script>
-
-<div style="display:none;">
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "http://hm.baidu.com/hm.js?63ba884cf404de06c7d8dcc2fc46343e";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-</div>
-</body>
+			function setDemo( el ) {
+				var idx = demos.indexOf( el );
+				if( current !== idx ) {
+					var currentDemo = demos[ current ];
+					currentDemo.className = currentDemo.className.replace(new RegExp("(^|\\s+)" + 'current-demo' + "(\\s+|$)"), ' ');
+				}
+				current = idx;
+				el.className = 'current-demo'; 
+			}
+		</script>
+	</body>
 </html>
