@@ -1,8 +1,8 @@
 ﻿/*global*/
 body { line-height:1.6; font-family:'microsoft yahei','stheiti',sans-serif; font-size:1em; color:#333; }
 input, textarea { font-family:'microsoft yahei','stheiti',sans-serif; }
-a { color: #0000e8; }
-a:hover { color: #0000cc; }
-::selection { background:#2b97e8; color:#fff; }
-::-moz-selection { background:#2b97e8; color:#fff; } 
+a { color: #00ffff; }
+a:hover { color: #00ffff; }
+::selection { background:#2bffff; color:#fff; }
+::-moz-selection { background:#2f0f0f0; color:#fff; } 
 input, textarea { border: 1px solid #dfdfdf; }
